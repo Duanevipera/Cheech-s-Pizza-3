@@ -1,0 +1,33 @@
+#typeLabel {
+    font-weight: bold;
+    text-align: center;
+    grid-area: typeLabel;
+}
+
+#quanityLabel {
+    font-weight: bold;
+    text-align: center;
+    grid-area: quanityLabel;
+}
+
+#type{
+    grid-area:type;
+    
+}
+
+#nums{
+    grid-area:nums;
+    
+}
+
+.submit{grid-area: submit;}
+
+.adiv {
+    display: grid;
+    justify-content: center;
+    grid-template-areas: 
+    'typeLabel quanityLabel'
+    'type nums'
+    'submit submit'
+    ;
+}
