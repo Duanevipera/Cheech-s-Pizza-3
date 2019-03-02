@@ -21,6 +21,7 @@
 }
 
 .submit{grid-area: submit;}
+.total{grid-area:total}
 
 .adiv {
     display: grid;
@@ -29,5 +30,6 @@
     'typeLabel quanityLabel'
     'type nums'
     'submit submit'
+    'total total'
     ;
 }
