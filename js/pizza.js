@@ -53,7 +53,7 @@ submit.addEventListener("click", function () {
 // displayed after submit button is clicked
 function getDetails(){
 
-details.innerHTML = `<h1 style="text-align: center">Contact Details</h1><br> Hello, ${names.value}! An e-mail has been sent to ${email.value} confirming ${nums.value} pizza's on the way!`;
+details.innerHTML = `<h1 style="text-align: center">Contact Details</h1><br><h3 style='text-align:center'> Thank you for choosing Cheech's Pizza, ${names.value}! An e-mail has been sent to ${email.value} confirming ${nums.value} pizza's on the way!</h3>`;
 
 }
 
