@@ -68,15 +68,18 @@
     background-color: black;
 }
 
+#header{
+    color:white
+}
 
 
 
-html {
+body {
     background: darkred;
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
 
-body {
+#container {
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     background-color: lightsteelblue;
     margin-top: 4%;
@@ -102,6 +105,8 @@ h2 {
     border-bottom: 2px dashed black;
     color:orange !important
 }
+
+
 
 h2:hover {
     color: lightslategray;
