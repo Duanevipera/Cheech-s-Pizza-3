@@ -27,9 +27,23 @@
     display: grid;
     justify-content: center;
     grid-template-areas: 
+    'nameLabel emailLabel'
+    'name email'
     'typeLabel quanityLabel'
     'type nums'
     'submit submit'
     'total total'
     ;
+}
+
+.nameLabel, .emailLabel{
+    text-align: center;font-weight:bold
+}
+
+.nameLabel{grid-area:nameLabel}
+.emailLabel{grid-area:emailLabel}
+#names{grid-area:name}
+#email{grid-area: email}
+.details{
+    display:none
 }

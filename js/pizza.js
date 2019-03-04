@@ -1,5 +1,6 @@
 // The div where all the options will go
 var numOfPizzas = document.querySelector(".adiv");
+var contact = document.querySelector(".contact");
 // Declaring static variables for a return within functions
 let typeHolder = 0;
 let quanityHolder = 0;
@@ -18,6 +19,7 @@ function displayNums(){
 // Gets the type of pizzas and puts them in a option dropdown
 function displayTypes() {
   for (x = 0; x < types.length; x++) {
+  let something = types[1];
    typeHolder += "<option class='op' value=' " + types[x][1] + "'>" + types[x][0] + " $" + types[x][1] + "</option>"
 
 
@@ -29,16 +31,37 @@ let tax = 0.076;
 // Setting the total value to the default selected option
 let total = " $" + parseFloat((types[0][1] * 1) + (types[0][1] * tax)).toFixed(2);
 // Creation of the form
-numOfPizzas.innerHTML += "<b id='typeLabel'>Types</b><select name='price' id='type'>" + displayTypes() + "</select>"
+numOfPizzas.innerHTML += "<label class='nameLabel' for='name'>Name</label><input  type='text' name='name' placeholder='Enter your name' id='names' ></input>"
+numOfPizzas.innerHTML += "<label class='emailLabel' for='email'>E-mail</label><input type='text' name='email' placeholder='Enter your E-mail' id='email' ></input>"
+numOfPizzas.innerHTML += "<b id='typeLabel'>Types</b><select name='typePrice' id='type'>" + displayTypes() + "</select>"
 numOfPizzas.innerHTML += "<b id='quanityLabel'>Quantity</b><select name='amount' id='nums'>" +  displayNums() +    "</select>"
-numOfPizzas.innerHTML += "<input class='submit' type='submit' value='Order Now'></input>"
 numOfPizzas.innerHTML += "<input id='total' type='text' value='Total:"+ total + "' readonly></input>"
+numOfPizzas.innerHTML += "<button class='submit' type='button' >Order Now</button>"
+// delclaring detail variables
+let submit = document.querySelector(".submit");
+let details = document.querySelector(".details");
+let names = document.querySelector("#names");
+let type = document.querySelector("#type");
+let nums = document.querySelector("#nums");
+let email = document.querySelector("#email");
+submit.addEventListener("click", function () {
+  console.log(names.value);
+  details.style.display = "block";
+  getDetails();
+});
+
+// displayed after submit button is clicked
+function getDetails(){
+
+details.innerHTML = `<h1 style="text-align: center">Contact Details</h1><br> Hello, ${names.value}! An e-mail has been sent to ${email.value} confirming ${nums.value} pizza's on the way!`;
+
+}
 
 // total textbox
 let valueT = document.getElementById("total");
 // calculate total value
 function calculateTotal() {
-  let price = document.querySelector("form").elements.namedItem("price").value;
+  let price = document.querySelector("form").elements.namedItem("typePrice").value;
   let quanity = document.querySelector("form").elements.namedItem("amount").value;
   total = parseFloat(price) * parseFloat(quanity); // this would be the subtotal
   total += (tax*total);
