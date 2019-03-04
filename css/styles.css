@@ -20,19 +20,24 @@
     
 }
 
-.submit{grid-area: submit;}
+.submit{
+    grid-area: submit; 
+    background-color:rgba(93, 179, 230, 0.5);
+    border-radius: 20px;
+    margin-top: 5px
+}
 .total{grid-area:total}
 
 .adiv {
     display: grid;
     justify-content: center;
     grid-template-areas: 
-    'nameLabel emailLabel'
-    'name email'
-    'typeLabel quanityLabel'
-    'type nums'
-    'submit submit'
-    'total total'
+    'nameLabel emailLabel emailLabel'
+    'name email email'
+    'typeLabel typeLabel quanityLabel'
+    'type type nums'
+    'subtotal tax total'
+    '. submit .'
     ;
 }
 
@@ -45,7 +50,8 @@
 #names{grid-area:name}
 #email{grid-area: email}
 .details{
-    display:none
+    display:none;
+    padding:0px 100px
 }
 
 .images {
@@ -57,13 +63,12 @@
     transition: 0.3s;
 }
 
-
-.uk-slider-items {
-    margin-left: 3%;
-    padding-right: 3%;
-    border: 5px solid black;
+.uk-position-relative{
+    width:100%;
     background-color: black;
 }
+
+
 
 
 html {
@@ -86,12 +91,16 @@ h1 {
     margin-bottom: 3%;
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     font-weight: 100;
+    background-color:rgba(0, 0, 0, 0.5);
+    border-radius: 10px;
+    padding:15px;
     text-align: center;
 }
 
 h2 {
     border-top: 2px dashed black;
     border-bottom: 2px dashed black;
+    color:orange !important
 }
 
 h2:hover {
@@ -129,4 +138,44 @@ aside {
 
 footer {
     text-align: center;
+}
+
+ul img{
+    height: 500px;
+    
+}
+
+
+@media only screen and (max-width: 1164px) {
+
+.adiv{
+    grid-template-areas: 
+    'nameLabel'
+    'name'
+    'emailLabel'
+    'email'
+    'typeLabel'
+    'type'
+    'quanityLabel'
+    'nums'
+    'subtotal'
+    'tax'
+    'total'
+    'submit'
+    
+}
+
+#nums{
+   padding-left:45%
+}
+
+}
+
+
+
+
+@media only screen and (max-width: 700px) {
+.details h3{
+font-size: 3.5vw
+}
 }
